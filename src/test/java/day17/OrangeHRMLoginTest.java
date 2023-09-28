@@ -1,15 +1,9 @@
-package seleniumprojectday17;
-public class OrangeHRMLoginTest 
-{
-	
-}
-
-/*
+package day17;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-//1
+/*
 1) Launch browser
 2) open url
 	https://opensource-demo.orangehrmlive.com/
@@ -19,7 +13,7 @@ import org.openqa.selenium.WebElement;
 6) Verify the title of dashboard page   
 	Exp title : OrangeHRM
 7) close browser
-
+*/
 // 1
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -49,51 +43,49 @@ public class OrangeHRMLoginTest {
 		
 		//4) Provide password  - admin123
 		driver.findElement(By.name("password")).sendKeys("admin");
-		
 		//5) Click on Submit button 
-		driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")).click();
-		Thread.sleep(7000);
-		
-		//6) Verify the title of dashboard page   
-		//Title validation
-		//2String act_title=driver.getTitle();
-		String exp_title="OrangeHRM";
-		
-		if(act_title.equals(exp_title))
-		{
-			System.out.println("Test passed");
-		}
-		else
-		{
-			System.out.println("failed");
-		}
-		//2
-		
-		// Lable validation after successful login
-		String act_label = "";
-		try
-		{
-		act_label=driver.findElement(By.xpath("//*[@id='app']/div[1]/div[1]/header/div[1]/div[1]/span/h6")).getText();
-		}
-		catch(NoSuchElementException e)	{ 
-			}
-		
-		String exp_label="Dashboard";
-		
-		if(act_label.equals(exp_label))
-		{
-			System.out.println("test passed");
-		}
-		else
-		{
-			System.out.println("test failed");
-		}
-		
-		//7) close browser
-		//driver.close();
-		driver.quit();
-		
-	}
+	 driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")).click();
+	Thread.sleep(7000);
 
-}
-*/
+	//6) Verify the title of dashboard page   
+			//Title validation
+			/*String act_title=driver.getTitle();
+			String exp_title="OrangeHRM";
+			
+			if(act_title.equals(exp_title))
+			{
+				System.out.println("Test passed");
+			}
+			else
+			{
+				System.out.println("failed");
+			}
+			*/
+			
+			// Lable validation after successful login
+			String act_label = "";
+			try
+			{
+			act_label=driver.findElement(By.xpath("//*[@id='app']/div[1]/div[1]/header/div[1]/div[1]/span/h6")).getText();
+			}
+			catch(NoSuchElementException e)	{ 
+				}
+			
+			String exp_label="Dashboard";
+			
+			if(act_label.equals(exp_label))
+			{
+				System.out.println("test passed");
+			}
+			else
+			{
+				System.out.println("test failed");
+			}
+			
+			//7) close browser
+			//driver.close();
+			driver.quit();
+			
+		}
+
+	}

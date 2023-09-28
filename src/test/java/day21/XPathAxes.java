@@ -13,7 +13,6 @@ public class XPathAxes {
 
 	public static void main(String[] args) {
 			WebDriverManager.chromedriver().setup();
-		
 		WebDriver driver=new ChromeDriver();
 		
 		// My name is ketan
