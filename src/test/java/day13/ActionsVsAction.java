@@ -12,22 +12,22 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class ActionsVsAction {
 
 	public static void main(String[] args) throws InterruptedException {
-		
+
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver =new ChromeDriver();
-		
+		WebDriver driver = new ChromeDriver();
+
 		driver.get("http://swisnl.github.io/jQuery-contextMenu/demo.html");
 		driver.manage().window().maximize();
-		
-		WebElement button=driver.findElement(By.xpath("//span[@class='context-menu-one btn btn-neutral']"));
-		
-		Actions act=new Actions(driver);
-		
-		//act.contextClick(button).build().perform();
-		
-		Action myaction=act.contextClick(button).build();  // creating action and storing it in variable
-		myaction.perform();  // completing action 
-		
-		//act.contextClick(button).perform(); //right click
-}
+
+		WebElement button = driver.findElement(By.xpath("//span[@class='context-menu-one btn btn-neutral']"));
+
+		Actions act = new Actions(driver);
+
+		// act.contextClick(button).build().perform();
+
+		Action myaction = act.contextClick(button).build(); // creating action and storing it in variable
+		myaction.perform(); // completing action
+
+		// act.contextClick(button).perform(); //right click
+	}
 }
